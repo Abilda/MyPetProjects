@@ -1,0 +1,28 @@
+﻿@model DatabaseFirst.Models.Doctors
+@{ //model IEnumerable<DatabaseFirst.Models.Specialization>}
+}
+@{
+    ViewData["Title"] = "Cоздать доктора";
+}
+@*combo-box @*select*@
+<h1>CreateDoctor</h1>
+<form asp-action="CreateDoctorFirstPart" asp-controller="home">
+    <div>
+        <div>
+            <label asp-for="Firstname">Имя</label>
+            <input type="text" asp-for="Firstname" />
+        </div>
+        <div>
+            <label asp-for="Familyname">Фамилия</label>
+            <input asp-for="Familyname" />
+        </div>
+        <div>
+            <label asp-for="Middlename">Отчество</label>
+            <input asp-for="Middlename" />
+        </div>
+        <div>
+            <input type="submit" value="Далее" />
+        </div>
+    </div>
+</form>
+

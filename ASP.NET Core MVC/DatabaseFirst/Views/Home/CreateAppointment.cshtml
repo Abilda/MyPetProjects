@@ -1,0 +1,21 @@
+﻿@model IEnumerable<DatabaseFirst.Models.Doctors>
+@{
+    ViewData["Title"] = "Записаться на прием к врачу";
+}
+<h2>ФИО пациента: @ViewBag.FIO</h2>
+<br />
+<h3>Записаться на прием к врачу</h3>
+<br />
+<form asp-action="CreateAppointment" asp-controller="home" asp-route-id="@ViewBag.ID">
+    <label>Выберете Доктора:</label><br />
+    <select name="Doctorid">
+        @foreach (var doc in Model)
+        {
+            <option value="@doc.Id">имя -@doc.Firstname, специализация @doc.Specialization.Name </option>
+        }
+    </select>
+    <br />
+    <label>Выберете дату посещения:</label><br />
+    <input type="text" name="Visitdate" /><br /><br />
+    <input type="submit" value="Отправить" />
+</form>

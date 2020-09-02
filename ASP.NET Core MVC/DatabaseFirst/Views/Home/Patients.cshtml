@@ -1,0 +1,33 @@
+﻿@model IEnumerable<DatabaseFirst.Models.Patients>
+@{
+    ViewBag.Title = "Все пациенты";
+}
+<a asp-action="CreatePatient">Добавить Пациента</a>
+<table class="table">
+    <tr><td>ФИО</td><td>ИИН</td><td>Адрес           </td><td>Телефон</td><td>Создан</td></tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Familyname @item.Firstname @item.Middlename</td>
+            <td>@item.Iin</td>
+            <td>@item.Address</td>
+            <td>@item.Phonenumber</td>
+            <td>@item.Created</td>
+            <td>
+                <a asp-action="EditPatient" asp-controller="Home" asp-route-id="@item.Id">
+                    Изменить
+                </a>
+                <a asp-action="DeletePatient" asp-controller="Home" asp-route-id="@item.Id">
+                    Удалить
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a asp-action="AboutPatient" asp-controller="Home" asp-route-id="@item.Id">
+                    Подробнее
+                </a>
+            </td>
+        </tr>
+    }
+</table>

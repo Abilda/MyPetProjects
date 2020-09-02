@@ -1,0 +1,9 @@
+﻿@model DatabaseFirst.Models.Doctors
+@{
+    ViewData["Title"] = "Личный кабинет Доктора";
+}
+
+<label>ФИО - @Model.Familyname @Model.Firstname @Model.Middlename, </label>
+<label>Специализация доктора - @Model.Specialization.Name</label>
+<br />
+<label>Пациенты: </label>

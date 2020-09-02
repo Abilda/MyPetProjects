@@ -1,0 +1,30 @@
+﻿@model DatabaseFirst.Models.Patients
+@{
+    ViewBag.Title = "Пациент";
+}
+<label>Пациент - @Model.Familyname @Model.Firstname @Model.Middlename</label> 
+<br />
+<a asp-action="CreateAppointment" asp-route-id="@Model.Id">Записаться на прием к врачу</a>
+<br />
+<a asp-action="Conclusions" asp-route-id="@Model.Id">Посмотреть историю болезней</a>
+<br/>
+@*<label>Все записи</label>
+<table class="table">
+    <tr><td>Врач</td><td>Специализация</td><td>Дата</td></tr>
+    @foreach (var item in Model.Patientdoctors.)
+    {
+        <tr>
+            <td>@item.Familyname @item.Firstname @item.Middlename</td>
+            <td>@item.Specialization.Name</td>
+            <td>@item.Created</td>
+            <td>
+                <a asp-action="EditDoctor" asp-controller="Home" asp-route-id="@item.Id">
+                    Изменить
+                </a>
+                <a asp-action="DeleteDoctor" asp-controller="Home" asp-route-id="@item.Id">
+                    Удалить
+                </a>
+            </td>
+        </tr>
+    }
+</table>*@

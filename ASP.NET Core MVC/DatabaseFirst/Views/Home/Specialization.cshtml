@@ -1,0 +1,20 @@
+﻿@model IEnumerable<DatabaseFirst.Models.Specialization>
+@{
+    ViewBag.Title = "Все пользователи";
+}
+<a asp-action="CreateSpecialization">Добавить специализацию доктора</a>
+<table class="table">
+    <tr><td>Имя</td><td>Создан</td></tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Name</td><td>@item.Created</td>
+            <td>
+                <a asp-action="EditSpecialization" asp-controller="Home" asp-route-id="@item.Id">
+                Изменить</a>
+                <a asp-action="DeleteSpecialization" asp-controller="Home" asp-route-id="@item.Id">
+                Удалить</a>
+            </td>
+        </tr>
+    }
+</table>

@@ -1,0 +1,33 @@
+﻿@model DatabaseFirst.Models.Patients
+@{
+    ViewBag.Title = "Добавление пациента";
+}
+    <form asp-action="CreatePatient" asp-controller="home">
+        <div class="form-group">
+            <label asp-for="Firstname" class="control-label">Имя</label>
+            <input type="text" asp-for="Firstname" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Familyname" class="control-label">Фамилия</label>
+            <input type="text" asp-for="Familyname" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Middlename" class="control-label">Отчество</label>
+            <input type="text" asp-for="Middlename" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Iin" class="control-label">ИИН</label>
+            <input type="text" asp-for="Iin" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Address" class="control-label">Адрес</label>
+            <input type="text" asp-for="Address" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Phonenumber" class="control-label">Номер телефона</label>
+            <input type="text" asp-for="Phonenumber" class="form-control" />
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Отправить" class="btn btn-default" />
+        </div>
+    </form>

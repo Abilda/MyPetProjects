@@ -1,0 +1,34 @@
+﻿@model DatabaseFirst.Models.Doctors
+@{ //model IEnumerable<DatabaseFirst.Models.Specialization>}
+}
+@{
+    ViewData["Title"] = "Cоздать доктора";
+}
+<h1>CreateDoctor</h1>
+<form asp-action="CreateDoctorSecondPart" asp-controller="home">
+    <div>
+        <div style="display:none">
+            <div>
+                <label asp-for="Firstname">Имя</label>
+                <input type="text" asp-for="Firstname" value="@Model.Firstname" />
+            </div>
+            <div>
+                <label asp-for="Familyname">Фамилия</label>
+                <input asp-for="Familyname" value="@Model.Familyname" />
+            </div>
+            <div>
+                <label asp-for="Middlename">Отчество</label>
+                <input asp-for="Middlename" value="@Model.Middlename" />
+            </div>
+        </div>
+        <div>
+            <label asp-for="Specializationid">Специализация</label>
+            <select asp-for="Specializationid" asp-items="ViewBag.Specialization">
+            </select>
+        </div>
+        <div>
+            <input type="submit" value="Save" />
+        </div>
+    </div>
+</form>
+
